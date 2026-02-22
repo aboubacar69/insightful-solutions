@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -73,16 +72,16 @@ const HeroCarousel = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="#services"
+                  href="#contact"
                   className="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold hover:brightness-110 transition-all text-center"
                 >
-                  En savoir plus
+                  Nous contacter
                 </a>
                 <a
-                  href="#contact"
+                  href="#apropos"
                   className="border-2 border-secondary-foreground/30 text-secondary-foreground px-8 py-3.5 rounded-lg font-semibold hover:bg-secondary-foreground/10 transition-all text-center"
                 >
-                  Nous contacter
+                  En savoir plus
                 </a>
               </div>
             </motion.div>
@@ -90,21 +89,6 @@ const HeroCarousel = () => {
         </div>
       </div>
 
-      {/* Navigation arrows */}
-      <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center text-secondary-foreground hover:bg-background/40 transition-all hidden md:flex"
-        aria-label="Précédent"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center text-secondary-foreground hover:bg-background/40 transition-all hidden md:flex"
-        aria-label="Suivant"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
 
       {/* Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
