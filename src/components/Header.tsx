@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X, Building2, PhoneCall } from "lucide-react";
 
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
@@ -50,9 +50,10 @@ const Header = () => {
           ))}
           <a
             href="#contact"
-            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:brightness-110 transition-all"
+            className="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:brightness-110 transition-all"
+            aria-label="Nous contacter"
           >
-            Nous contacter
+            <PhoneCall className="w-5 h-5 text-primary-foreground" />
           </a>
         </nav>
 

@@ -1,4 +1,20 @@
-import { Building2, MapPin, Phone, Mail, Instagram, Twitter, Facebook, Linkedin } from "lucide-react";
+import {
+  Building2, MapPin, Phone, Mail, Instagram, Twitter, Facebook, Linkedin,
+  Home, Briefcase, Info, MessageSquare, BookOpen, BarChart3, Monitor
+} from "lucide-react";
+
+const quickLinks = [
+  { label: "Accueil", href: "#accueil", icon: Home },
+  { label: "Services", href: "#services", icon: Briefcase },
+  { label: "À Propos", href: "#apropos", icon: Info },
+  { label: "Contact", href: "#contact", icon: MessageSquare },
+];
+
+const serviceLinks = [
+  { label: "Études et Évaluations", href: "#services", icon: BookOpen },
+  { label: "Statistiques & Économétrie", href: "#services", icon: BarChart3 },
+  { label: "Consulting & Logiciels", href: "#services", icon: Monitor },
+];
 
 const Footer = () => {
   return (
@@ -13,7 +29,7 @@ const Footer = () => {
               </div>
               <span className="font-serif text-xl font-bold">ConsultPro</span>
             </div>
-            <p className="text-secondary-foreground/70 text-sm leading-relaxed">
+            <p className="text-secondary-foreground/70 text-sm leading-relaxed font-serif">
               Cabinet de conseil et d'études spécialisé en évaluation, statistiques et solutions logicielles innovantes.
             </p>
           </div>
@@ -21,14 +37,15 @@ const Footer = () => {
           {/* Col 2 - Quick links */}
           <div>
             <h4 className="font-serif font-bold text-lg mb-4">Liens rapides</h4>
-            <ul className="space-y-2.5">
-              {["Accueil", "Services", "À Propos", "Contact"].map((l) => (
-                <li key={l}>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">
+              {quickLinks.map(({ label, href, icon: Icon }) => (
+                <li key={label}>
                   <a
-                    href={`#${l === "Accueil" ? "accueil" : l === "Services" ? "services" : l === "À Propos" ? "apropos" : "contact"}`}
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+                    href={href}
+                    className="flex items-center gap-1.5 text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
                   >
-                    {l}
+                    <Icon className="w-3.5 h-3.5" />
+                    {label}
                   </a>
                 </li>
               ))}
@@ -38,11 +55,15 @@ const Footer = () => {
           {/* Col 3 - Services */}
           <div>
             <h4 className="font-serif font-bold text-lg mb-4">Nos Services</h4>
-            <ul className="space-y-2.5">
-              {["Études et Évaluations", "Statistiques & Économétrie", "Consulting & Logiciels"].map((s) => (
-                <li key={s}>
-                  <a href="#services" className="text-secondary-foreground/70 hover:text-primary transition-colors text-sm">
-                    {s}
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">
+              {serviceLinks.map(({ label, href, icon: Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    className="flex items-center gap-1.5 text-secondary-foreground/70 hover:text-primary transition-colors text-sm"
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                    {label}
                   </a>
                 </li>
               ))}
